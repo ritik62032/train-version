@@ -14,9 +14,12 @@ const Login = ({ onLogin }) => {
     setLoading(true);
     setError('');
     try {
+      console.log('Login request:', { email, password });
       const data = await apiService.login(email, password);
+      console.log('Login response:', data);
       onLogin(data);
     } catch (err) {
+      console.error('Login error:', err);
       setError(err.detail || 'Login failed. Please check your email and password.');
     } finally {
       setLoading(false);

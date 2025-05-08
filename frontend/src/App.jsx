@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
@@ -14,39 +14,43 @@ import TripForm from './components/TripForm';
 import TripList from './components/TripList';
 import AdvancedSchedule from './components/AdvancedSchedule';
 import TripDetail from './components/TripDetail';
+import UserDashboard from './components/UserDashboard';
 import './styles/App.css';
 import './styles/notification.css';
 
-
 function App() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/dashboard');
+  };
+
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Hero />
-                <HowItWorks />
-              </>
-            } />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/recommendations" element={<Recommendations />} />
-            <Route path="/schedule" element={<Schedule tripId={1} />} />
-            <Route path="/trips" element={<TripList />} />
-            <Route path="/trips/new" element={<TripForm />} />
-            <Route path="/trips/:tripId" element={<TripDetail />} />
-            <Route path="/profile/edit" element={<ProfileEdit />} />
-            <Route path="/advanced-schedule" element={<AdvancedSchedule />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <HowItWorks />
+            </>
+          } />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/recommendations" element={<Recommendations />} />
+          <Route path="/schedule" element={<Schedule tripId={1} />} />
+          <Route path="/trips" element={<TripList />} />
+          <Route path="/trips/new" element={<TripForm />} />
+          <Route path="/trips/:tripId" element={<TripDetail />} />
+          <Route path="/profile/edit" element={<ProfileEdit />} />
+          <Route path="/advanced-schedule" element={<AdvancedSchedule />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
