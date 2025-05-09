@@ -114,7 +114,7 @@ const Register = ({ onRegister }) => {
               required
             />
             <label htmlFor="termsCheckbox">
-              By continuing, you agree to Mindtrip's Terms of Service and acknowledge you've read our Privacy Policy.
+              By continuing, you agree to YaatraMate's Terms of Service and acknowledge you've read our Privacy Policy.
             </label>
           </div>
 

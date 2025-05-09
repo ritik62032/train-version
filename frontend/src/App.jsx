@@ -15,6 +15,7 @@ import TripList from './components/TripList';
 import AdvancedSchedule from './components/AdvancedSchedule';
 import TripDetail from './components/TripDetail';
 import UserDashboard from './components/UserDashboard';
+import ItineraryForm from './components/ItineraryForm';
 import './styles/App.css';
 import './styles/notification.css';
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="/profile/edit" element={<ProfileEdit />} />
           <Route path="/advanced-schedule" element={<AdvancedSchedule />} />
           <Route path="/dashboard" element={<UserDashboard />} />
+          <Route path="/itinerary" element={<ItineraryForm />} />
         </Routes>
       </main>
       <Footer />
