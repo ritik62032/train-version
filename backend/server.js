@@ -20,7 +20,7 @@
        process.env.GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY.trim();
    } else if (!process.env.GEMINI_API_KEY && !process.env.REACT_APP_GEMINI_API_KEY) {
        console.log('API key not found in environment variables. Using hardcoded value.');
-       process.env.GEMINI_API_KEY = 'AIzaSyANU6Qo_OlBmbNS-TqMrQqSZuMA2wB7kC0';
+    //    
    } else if (process.env.GEMINI_API_KEY) {
        // Ensure the key doesn't have any whitespace
        process.env.GEMINI_API_KEY = process.env.GEMINI_API_KEY.trim();
@@ -42,8 +42,7 @@
    // Debug: Log all command line arguments
    console.log('Command line args:', process.argv);
 
-   console.log(`[DEBUG] GEMINI_API_KEY from server.js (GEMINI_API_KEY): '${process.env.GEMINI_API_KEY || "not found"}'`);
-   console.log(`[DEBUG] GEMINI_API_KEY from server.js (REACT_APP_GEMINI_API_KEY): '${process.env.REACT_APP_GEMINI_API_KEY || "not found"}'`);
+
 
    const app = express();
    const PORT = process.env.PORT || 3000;

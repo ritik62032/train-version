@@ -1,7 +1,8 @@
 // Simple direct test of the Gemini API
 const fetch = require('node-fetch');
 
-const API_KEY = 'AIzaSyANU6Qo_OlBmbNS-TqMrQqSZuMA2wB7kC0';
+
+const API_KEY = 'process.env.GEMINI_API_KEY.trim()';
 const MODEL = 'gemini-pro';
 const URL = `https://generativelanguage.googleapis.com/v1/models/${MODEL}:generateContent?key=${API_KEY}`;
 
