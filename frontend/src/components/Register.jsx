@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { apiService } from '../services/apiService';
+import { Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = ({ onRegister }) => {
@@ -137,7 +138,7 @@ const Register = ({ onRegister }) => {
             </div>
           )}
           <div className="login-link">
-            <p>Already have an account? <a href="/login">Log in</a></p>
+            <p>Already have an account? <Link to="/login">Log in</Link></p>
           </div>
         </form>
       </div>
